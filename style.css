@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
     --primary-color: #75BF7A;
@@ -15,17 +15,31 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Inter", sans-serif;
     background: var(--bg-color);
+    overflow-x: hidden;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 30px 40px;
-    background-color: #fff;
+
+    background: #fff;
+
+    position: relative;
+    z-index: 1000;
 }
 
 header>.logo {
@@ -33,28 +47,39 @@ header>.logo {
     height: auto;
 }
 
-header>nav {
+/* NAVBAR */
+
+header nav {
     display: flex;
-    gap: 46px;
     align-items: center;
+    gap: 46px;
 }
 
 nav a {
     text-decoration: none;
     color: #000;
+
     font-size: 16px;
     font-weight: 500;
+
     position: relative;
+
+    transition: 0.3s;
 }
 
 nav a::after {
     content: "";
+
     position: absolute;
+
     left: 0;
     bottom: -5px;
+
     width: 0;
     height: 3px;
-    background-color: var(--primary-color);
+
+    background: var(--primary-color);
+
     transition: width 0.3s ease;
 }
 
@@ -66,45 +91,58 @@ nav a:hover::after {
     width: 100%;
 }
 
+/* BUTTON */
+
 .btn {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: #fff;
+
     border: none;
-    padding: 10px 20px;
     border-radius: 5px;
+
+    padding: 10px 20px;
+
     font-size: 18px;
     font-weight: 500;
+
     cursor: pointer;
+
+    transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: var(--hover-color);
+    background: var(--hover-color);
 }
 
+/* MENU ICON */
+
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+
+    display: none;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero-section {
-    height: 88vh;
+    min-height: 88vh;
+
     display: flex;
+    align-items: center;
+
+    padding: 50px 40px;
+
+    gap: 40px;
 }
 
 .hero-section>div {
-    padding: 0 50px;
     flex: 1;
 }
 
-.hero-section-img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero-section-img img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-}
+/* HERO TEXT */
 
 .hero-section-text {
     display: flex;
@@ -115,176 +153,812 @@ nav a:hover::after {
 .hero-section-text h2 {
     font-size: 60px;
     font-weight: 800;
+    line-height: 1.2;
 }
 
 .hero-section-text p {
     margin: 20px 0;
+
     font-size: 20px;
     font-weight: 500;
+
     color: var(--text-color);
-    width: 500px;
+
+    max-width: 550px;
+
+    line-height: 1.7;
 }
 
-.hero-btns{
+/* HERO BUTTONS */
+
+.hero-btns {
     display: flex;
     gap: 20px;
     align-items: center;
+    flex-wrap: wrap;
 }
+
+/* BLACK BUTTON */
 
 .black-btn {
-    background-color: var(--btn-bg-color);
+    background: var(--btn-bg-color);
     color: var(--btn-color);
+
     border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
+    border-radius: 6px;
+
+    padding: 14px 24px;
+
     font-weight: 800;
-    font-size: 22px;
+    font-size: 18px;
+
     cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: 0.3s;
 }
 
-.green-section{
+.black-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* HERO IMAGE */
+
+.hero-section-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section-img img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* =========================
+   GREEN SECTION
+========================= */
+
+.green-section {
     background: var(--primary-color);
+
     margin: 80px;
+
     padding: 40px 60px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
+
+    border-radius: 12px;
+
+    gap: 30px;
 }
 
-.green-section > p{
+.green-section>p {
     color: #fff;
+
     font-size: 25px;
-    font-weight: 600px;
+    font-weight: 600;
+
     width: 260px;
+
     line-height: 1.5;
 }
 
-.green-section input{
-    padding: 10px;
-    font-size: 20px;
-}
-
-.green-section div{
+.green-section div {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-.green-section input{
+.green-section input {
     width: 500px;
     height: 65px;
+
     border: none;
     outline: none;
+
     border-radius: 6px;
+
     padding: 0 25px;
+
     font-size: 18px;
-    background-color: #fff;
+
+    background: #fff;
 }
 
-.green-section input::placeholder{
+.green-section input::placeholder {
     color: var(--text-color);
-    font-size: 18px;
 }
 
-.green-section .black-btn{
+.green-section .black-btn {
     height: 65px;
-    padding: 0 30px;
-    font-size: 18px;
-    border-radius: 6px;
 }
 
-.how-works{
+/* =========================
+   HOW WORKS
+========================= */
+
+.how-works {
     width: 100%;
     padding: 100px 80px;
 }
 
-.section-heading{
+.section-heading {
     text-align: center;
     margin-bottom: 90px;
 }
 
-.section-heading h2{
+.section-heading h2 {
     font-size: 48px;
     font-weight: 800;
     margin-bottom: 20px;
 }
 
-.section-heading h2 span{
+.section-heading h2 span {
     color: var(--primary-color);
 }
 
-.section-heading p{
+.section-heading p {
     max-width: 500px;
     margin: auto;
+
     font-size: 20px;
+    line-height: 1.7;
+
     color: var(--text-color);
 }
 
-.works-container{
+/* WORKS CONTAINER */
+
+.works-container {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+
     gap: 50px;
+
     position: relative;
 }
 
+/* LEFT + RIGHT */
+
 .works-left,
-.works-right{
+.works-right {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     height: 500px;
+
     flex: 1;
 }
 
-.work-card{
+/* CARD */
+
+.work-card {
     width: 290px;
+
     display: flex;
     flex-direction: column;
 }
 
-.work-card p{
-    color: var(--text-color);
+.work-card h3 {
+    margin-bottom: 15px;
 }
 
-.left-card{
+.work-card p {
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+.left-card {
     align-items: flex-end;
     text-align: right;
     margin-left: auto;
 }
 
-.right-card{
+.right-card {
     align-items: flex-start;
     text-align: left;
 }
 
-.step-img{
+/* STEP IMAGE */
+
+.step-img {
     width: 70px;
     height: 70px;
+
     object-fit: contain;
+
     margin-bottom: 20px;
+
     display: block;
 }
 
-.mobile-center{
+/* MOBILE CENTER */
+
+.mobile-center {
     width: 450px;
     height: 450px;
+
     position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.circle{
+.circle {
     width: 420px;
     height: 420px;
+
     border-radius: 50%;
+
     background: var(--primary-color);
+
     position: absolute;
 }
 
-.mobile-img{
+.mobile-img {
     position: relative;
     z-index: 2;
+
+    width: 260px;
+}
+
+/* =========================
+   BENEFITS
+========================= */
+
+.benefits-section {
+    width: 100%;
+    padding: 50px 80px 100px;
+}
+
+.benefits-heading {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.benefits-heading h2 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.benefits-heading span {
+    color: var(--primary-color);
+}
+
+/* BENEFIT CARD */
+
+.benefit-card {
+    background: #fff;
+
+    border-radius: 12px;
+
+    padding: 50px 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 40px;
+
+    gap: 30px;
+}
+
+.reverse-card {
+    width: 92%;
+    margin-left: 200px;
+}
+
+.benefit-text {
+    max-width: 420px;
+}
+
+.benefit-title {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.benefit-number {
+    font-size: 70px;
+    font-weight: 700;
+
+    color: var(--primary-color);
+
+    line-height: 1;
+}
+
+.benefit-title h3 {
+    font-size: 34px;
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+.benefit-text p {
+    color: var(--text-color);
+
+    font-size: 22px;
+
+    line-height: 1.6;
+}
+
+.benefit-image img {
+    width: 257px;
+    max-width: 100%;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    width: 100%;
+    background: #fff;
+
+    margin-top: 80px;
+}
+
+.footer-top {
+    padding: 50px 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 40px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.footer-logo img {
+    width: 140px;
+}
+
+.footer-contact h3 {
+    font-size: 24px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+    color: #272042;
+}
+
+.footer-contact p {
+    color: var(--text-color);
+
+    font-size: 18px;
+
+    margin-bottom: 12px;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.download-btn {
+    background: #000;
+    color: #fff;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 14px 24px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.footer-bottom p {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
+/* =========================
+    RESPONSIVE
+========================= */
+
+@media(max-width: 992px) {
+
+    /* NAVBAR */
+
+    .menu-icon {
+        display: block;
+    }
+
+    header nav {
+        position: absolute;
+
+        top: 100%;
+        left: 0;
+
+        width: 100%;
+
+        background: #fff;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 25px;
+
+        padding: 30px 0;
+
+        display: none;
+
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    header nav.active {
+        display: flex;
+    }
+
+    /* HERO */
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+
+        padding: 60px 20px;
+    }
+
+    .hero-section-text {
+        align-items: center;
+    }
+
+    .hero-section-text h2 {
+        font-size: 42px;
+    }
+
+    .hero-section-text p {
+        font-size: 18px;
+    }
+
+    .hero-btns {
+        width: 100%;
+
+        flex-direction: row;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .hero-btns .black-btn {
+        width: 165px;
+        height: 55px;
+
+        font-size: 15px;
+
+        padding: 12px 16px;
+    }
+
+    /* GREEN SECTION */
+
+    .green-section {
+        flex-direction: column;
+
+        margin: 50px 20px;
+
+        text-align: center;
+    }
+
+    .green-section>p {
+        width: 100%;
+    }
+
+    .green-section div {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .green-section input {
+        width: 100%;
+    }
+
+    .green-section .black-btn {
+        width: 100%;
+    }
+
+    /* BENEFITS */
+
+    .benefits-section {
+        padding: 50px 20px;
+    }
+
+    .benefit-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .reverse-card {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .benefit-title {
+        justify-content: center;
+    }
+
+    .benefit-text {
+        max-width: 100%;
+    }
+
+    /* FOOTER */
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+
+        gap: 35px;
+
+        padding: 40px 20px;
+    }
+
+    .footer-contact {
+        width: 100%;
+    }
+
+    .footer-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    .download-btn {
+        width: 200px;
+        height: 50px;
+
+        justify-content: center;
+
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 576px) {
+
+    header {
+        padding: 20px;
+    }
+
+    header>.logo {
+        width: 140px;
+    }
+
+    .menu-icon {
+        font-size: 24px;
+    }
+
+    /* HERO */
+
+    .hero-section-text h2 {
+        font-size: 32px;
+    }
+
+    .hero-section-text p {
+        font-size: 16px;
+    }
+
+    .hero-btns {
+        width: 100%;
+
+        flex-direction: row;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+    .hero-btns .black-btn {
+        width: 165px;
+        height: 55px;
+
+        font-size: 15px;
+
+        padding: 12px 16px;
+    }
+
+    .hero-section-img img {
+        max-width: 280px;
+    }
+
+    /* HEADINGS */
+
+    .section-heading h2,
+    .benefits-heading h2 {
+        font-size: 34px;
+    }
+
+    .section-heading p {
+        font-size: 16px;
+    }
+
+    /* =========================
+       HOW TERE WORKS MOBILE
+    ========================= */
+
+    .how-works {
+        padding: 70px 20px;
+    }
+
+    .works-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+
+    /* PHONE */
+
+    .mobile-center {
+        order: 1;
+
+        width: 260px;
+        height: 260px;
+
+        margin-bottom: 10px;
+    }
+
+    .circle {
+        width: 240px;
+        height: 240px;
+    }
+
+    .mobile-img {
+        width: 160px;
+    }
+
+    /* LEFT + RIGHT */
+
+    .works-left,
+    .works-right {
+        width: 100%;
+        height: auto;
+
+        gap: 35px;
+
+        align-items: center;
+    }
+
+    .works-left {
+        order: 2;
+    }
+
+    .works-right {
+        order: 3;
+    }
+
+    /* CARDS */
+
+    .work-card {
+        width: 100%;
+        max-width: 280px;
+
+        align-items: center !important;
+        text-align: center !important;
+
+        margin: 0 !important;
+    }
+
+    .work-card h3 {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .work-card p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .step-img {
+        width: 60px;
+        height: 60px;
+
+        margin-bottom: 15px;
+    }
+
+    /* BENEFITS */
+
+    .benefit-card {
+        padding: 35px 20px;
+    }
+
+    .benefit-number {
+        font-size: 52px;
+    }
+
+    .benefit-title h3 {
+        font-size: 24px;
+    }
+
+    .benefit-text p {
+        font-size: 16px;
+    }
+
+    .benefit-image img {
+        width: 180px;
+    }
+
+    /* FOOTER */
+
+    .footer-logo img {
+        width: 120px;
+    }
+
+    .footer-contact h3 {
+        font-size: 20px;
+    }
+
+    .footer-contact p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .footer-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    .download-btn {
+        width: 200px;
+        height: 50px;
+
+        justify-content: center;
+
+        font-size: 15px;
+    }
+
+    .footer-bottom p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
 }
